@@ -1,4 +1,4 @@
-(ns app.core)
+(ns app.core (:gen-class))
 
 (.setLevel (java.util.logging.Logger/getLogger "")  (java.util.logging.Level/WARNING))
 
