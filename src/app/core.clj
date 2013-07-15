@@ -1,7 +1,8 @@
 (ns app.core
   (:import
-           [org.lwjgl.opengl Display DisplayMode GL11]
-           [org.lwjgl.util.glu GLU]))
+    [org.lwjgl.opengl Display DisplayMode GL11]
+    [org.lwjgl.util.glu GLU])
+  (:use app.draw2d))
 
 (defn tri []
   (GL11/glBegin GL11/GL_TRIANGLES)
@@ -16,7 +17,8 @@
 (defn draw []
   (GL11/glClear (or GL11/GL_COLOR_BUFFER_BIT GL11/GL_DEPTH_BUFFER_BIT))
   (GL11/glLoadIdentity)
-  (tri)
+  (poly red [400 0] [0 400] [0 0])
+  (poly blue [300 400] [200 100] [100 500] [300 100])
   (Display/update))
 
 (defn init []
@@ -26,7 +28,7 @@
   
   (GL11/glMatrixMode GL11/GL_PROJECTION)
   (GL11/glLoadIdentity)
-  (GL11/glOrtho -3.2 3.2 -2.4 2.4 -1 1)
+  (GL11/glOrtho 0 640 480 0 -1 1)
   (GL11/glMatrixMode GL11/GL_MODELVIEW))
 
 (defn -main []
