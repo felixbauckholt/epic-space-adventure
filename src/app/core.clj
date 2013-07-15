@@ -23,9 +23,9 @@
 
 (defn init []
   (Display/setDisplayMode (new DisplayMode 640 480))
-  (Display/setTitle "TEST")
+  (Display/setTitle "LWJGL 2D")
   (Display/create)
-  
+    
   (GL11/glMatrixMode GL11/GL_PROJECTION)
   (GL11/glLoadIdentity)
   (GL11/glOrtho 0 640 480 0 -1 1)
