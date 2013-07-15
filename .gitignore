@@ -7,3 +7,5 @@
 /checkouts
 /.lein-deps-sum
 /lib*.so
+
+/.lein-repl-history
