@@ -3,7 +3,7 @@
     [org.lwjgl.opengl Display DisplayMode GL11]))
 
 (defn setCol [[r g b a]]
-  (GL11/glColor3f r g b))
+  (GL11/glColor4f r g b a))
 
 (defn goto [[x y]]
   (GL11/glVertex3f x y 0))
@@ -23,3 +23,5 @@
 (def red   [1 0 0 1])
 (def green [0 1 0 1])
 (def blue  [0 0 1 1])
+
+(defn transparent [t [r g b a]] [r g b (* t a)])

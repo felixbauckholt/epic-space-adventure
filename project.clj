@@ -4,6 +4,8 @@
       (System/getProperty "os.name")
       "\\s" "")))
 
+(println osname)
+
 (defproject app "1.0.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://github.com/felixbauckholt/epic-space-adventure"
