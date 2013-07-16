@@ -25,7 +25,7 @@
 
 (defn init []
   (Display/setDisplayMode (new DisplayMode 640 480))
-  (Display/setTitle "TEST")
+  (Display/setTitle "LWJGL 2D")
   (Display/create)
   
   (GL11/glEnable GL11/GL_BLEND)
