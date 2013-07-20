@@ -14,4 +14,5 @@
     [org.lwjgl.lwjgl/lwjgl "2.9.0"]
     [org.lwjgl.lwjgl/lwjgl_util "2.9.0"]]
   :jvm-opts [~(str "-Djava.library.path=native/" osname ":" (System/getProperty "java.library.path"))]
+  :java-source-paths ["src/app/java"]
   :main app.core)
