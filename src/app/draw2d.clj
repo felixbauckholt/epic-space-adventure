@@ -1,6 +1,6 @@
 (ns app.draw2d
   (:import
-    [org.lwjgl.opengl Display DisplayMode GL11]
+    [org.lwjgl.opengl GL11]
     [app.java TextureLoader Texture]))
 
 (def black [0 0 0 1])
