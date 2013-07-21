@@ -61,3 +61,18 @@
       (goto [(+ x (* mx w)) (+ y (* my h))])))
   (GL11/glEnd)
   (GL11/glDisable GL11/GL_TEXTURE_2D))
+
+(defn texPoly [t [ox oy] a & points]
+  (setCol (transparent a white))
+  (GL11/glEnable GL11/GL_TEXTURE_2D)
+  (.bind t)
+  (GL11/glBegin GL11/GL_TRIANGLE_FAN)
+  (let [wmul (/ (.getWidth t) (.getImageWidth t))
+        hmul (/ (.getHeight t) (.getImageHeight t))]
+    (doseq [[x y] points]
+      (let [[dx dy] [(- x ox) (- y oy)]
+            [tx ty] [(* wmul dx) (* hmul dy)]]
+        (GL11/glTexCoord2f tx ty))
+      (goto [x y])))
+  (GL11/glEnd)
+  (GL11/glDisable GL11/GL_TEXTURE_2D))
