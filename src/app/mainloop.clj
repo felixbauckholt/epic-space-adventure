@@ -17,9 +17,12 @@
   (GL11/glOrtho 0 x y 0 -1 1)
   (GL11/glMatrixMode GL11/GL_MODELVIEW))
 
+(defprotocol MainloopState
+  "Hier sollte man den Spielzustand speichern"
+  (update [ms dt])
+  (draw [ms]))
 
-
-(defn mainloop [configuration load update draw]
+(defn mainloop [configuration load]
   (apply init configuration)
   (loop [oldstate (load)
          oldtime (Sys/getTime)
